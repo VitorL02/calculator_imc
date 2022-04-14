@@ -18,6 +18,11 @@ form.addEventListener('submit',function(event){
         resultImc('Altura Invalida', false);
         return;
     }
+
+    if(weight < height){
+        resultImc('Porque sua Altura e maior que seu peso? Valor invalido! Digite novamente!',false);
+        return;
+    }
     
     const imc = getImc(weight,height);
     const level =  imcLevel(imc);
